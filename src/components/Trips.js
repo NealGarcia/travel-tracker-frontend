@@ -18,9 +18,7 @@ function Trips(props) {
     return (
         <div className = "tripContainer">
             {trips.map((trip) => (
-                <div className='tripCard'>
                     <TripCard trip = {trip}/>
-                </div>
             ))}
         </div>
     );
