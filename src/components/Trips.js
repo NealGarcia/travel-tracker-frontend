@@ -1,5 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import TripCard from './TripCard';
+import { Link } from "react-router-dom";
 
 function Trips(props) {
     const [trips, setTrips] = useState([])
@@ -17,9 +18,11 @@ function Trips(props) {
 
     return (
         <div className = "tripContainer">
-            <div className = "tripCard" id = "newTrip">
-                <p>Create New Trip</p>
-            </div>
+            <Link>
+                <div className = "tripCard" id = "newTrip">
+                    <p>Create New Trip</p>
+                </div>
+            </Link>
             {trips.map((trip) => (
                     <TripCard trip = {trip}/>
             ))}
