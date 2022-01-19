@@ -43,6 +43,7 @@ function Trips(props) {
     <div className = "trips">
       <h2 className = "tripHeader">All Trips</h2>
       <div className="tripContainer">
+        
         <div className="tripCard" id="newTrip" onClick={openModal}>
           <Modal
             isOpen={modalIsOpen}
@@ -54,6 +55,7 @@ function Trips(props) {
           </Modal>
           <p>Create New Trip</p>
         </div>
+
         {trips.map((trip) => (
           <TripCard trip={trip} />
         ))}
