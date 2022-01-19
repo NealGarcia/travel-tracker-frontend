@@ -13,11 +13,14 @@ body {
 }
 
 .tripContainer{
-  width: 100%;
+  width: 75%;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .tripCard{
@@ -28,6 +31,7 @@ body {
   position: relative;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -36,7 +40,7 @@ body {
 }
 
 #newTrip{
-  max-width: 160px;
+  max-width: 200px;
   max-height: 150px;
   cursor: pointer;
 }
