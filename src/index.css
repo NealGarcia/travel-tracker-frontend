@@ -38,6 +38,7 @@ body {
 #newTrip{
   max-width: 160px;
   max-height: 150px;
+  cursor: pointer;
 }
 
 #newTrip p{
