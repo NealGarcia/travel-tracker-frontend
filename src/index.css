@@ -46,3 +46,14 @@ body {
   padding-top: 40px;
 }
 
+.createTripForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.createTripForm input {
+  margin-bottom: 20px;
+}

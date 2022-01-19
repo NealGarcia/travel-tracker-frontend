@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 
 function CreateTrip({closeModal}) {
     return (
         <div>
             <form className = "createTripForm">
                 <h3>Create a New Trip</h3>
-                <label>Location
+                <label>Location 
                     <input type = "text"></input>
                 </label>
-                <label>Start Date
+                <label>Start Date 
                     <input type = "date"></input>
                 </label>
-                <label>End Date
+                <label>End Date 
                     <input type = "date"></input>
                 </label>
                 <button>Submit</button>
