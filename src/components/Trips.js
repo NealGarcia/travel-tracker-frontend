@@ -17,6 +17,9 @@ function Trips(props) {
 
     return (
         <div className = "tripContainer">
+            <div className = "tripCard" id = "newTrip">
+                <p>Create New Trip</p>
+            </div>
             {trips.map((trip) => (
                     <TripCard trip = {trip}/>
             ))}

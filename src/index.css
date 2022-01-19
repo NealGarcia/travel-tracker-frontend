@@ -31,3 +31,11 @@ body {
   text-align: center;
 }
 
+.tripContent{
+  padding-top: 40px;
+}
+
+#newTrip p{
+  padding-top: 40px;
+}
+
