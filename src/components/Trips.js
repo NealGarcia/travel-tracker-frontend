@@ -40,21 +40,24 @@ function Trips(props) {
   }
 
   return (
-    <div className="tripContainer">
-      <div className="tripCard" id="newTrip" onClick={openModal}>
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <CreateTrip closeModal={closeModal} />
-        </Modal>
-        <p>Create New Trip</p>
+    <div className = "trips">
+      <h2 className = "tripHeader">All Trips</h2>
+      <div className="tripContainer">
+        <div className="tripCard" id="newTrip" onClick={openModal}>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <CreateTrip closeModal={closeModal} />
+          </Modal>
+          <p>Create New Trip</p>
+        </div>
+        {trips.map((trip) => (
+          <TripCard trip={trip} />
+        ))}
       </div>
-      {trips.map((trip) => (
-        <TripCard trip={trip} />
-      ))}
     </div>
   );
 }
