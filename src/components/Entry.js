@@ -4,7 +4,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 function Entry({ entry }) {
-  const [value, setValue] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
@@ -17,6 +17,7 @@ function Entry({ entry }) {
 
   console.log(entry);
   console.log(entry[0].photo_url);
+  console.log(entry.length)
 
   return (
     <div className="entry">
@@ -28,19 +29,22 @@ function Entry({ entry }) {
       ))} */}
 
       <div className="container">
-        <img src={entry[value].photo_url} alt={entry[value].id} />
-        <h2>{entry[value].date}</h2>
-        <h3>{entry[value].body}</h3>
+        <img src={entry[counter].photo_url} alt={entry[counter].id} />
+        <h2>{entry[counter].date}</h2>
+        <h3>{entry[counter].body}</h3>
         <div>
+          {/* Click Image Left */}
           <button
             type="button"
-            onClick={() => (value === 0 ? setValue(3) : setValue(value - 1))}
+            // If counter is at 
+            onClick={() => (counter === 0 ? setCounter(entry.length - 1) : setCounter(counter - 1))}
           >
             <BsFillArrowLeftCircleFill />
           </button>
+          {/* Click Image Right */}
           <button
             type="button"
-            onClick={() => (value === 3 ? setValue(0) : setValue(value + 1))}
+            onClick={() => (counter === entry.length-1 ? setCounter(0) : setCounter(counter + 1))}
           >
             <BsFillArrowRightCircleFill />
           </button>
