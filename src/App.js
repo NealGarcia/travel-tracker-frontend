@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <Header />
-      <Trips />
-      <Route path = "/trip/:id" component = {TripDetails}/>
+      <Route path = "/" exact component = {Trips}/>
+      {/* <Trips /> */}
+      <Route path = "/trip/:id" exact component = {TripDetails}/>
     </div>
   );
 }

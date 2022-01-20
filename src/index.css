@@ -4,7 +4,8 @@ body {
 }
 
 .header {
-  margin-top: 0x;
+  margin-top: auto;
+  top: 0;
   width: 100%;
   background: lightgray;
   padding: 5px;
@@ -73,4 +74,20 @@ body {
 
 .createTripForm input {
   margin-bottom: 20px;
+}
+
+.detailsTitle {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.detailsDate{
+  text-align: center;
+}
+
+.backButton{
+  top: 50px;
+  left: 20px;
+  font-size: 20px;
+  position: relative;
 }
