@@ -5,6 +5,7 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 // modal styles
 const customStyles = {
@@ -20,7 +21,8 @@ const customStyles = {
 
 function Entry({ entry }) {
   const [counter, setCounter] = useState(0);
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [createModal, setCreateModal] = useState(false);
+  const [editModal, setEditModal] = useState(false)
   const [showEdit, setShowEdit] = useState(false);
 
   // Loading if data is still undefined, return message
@@ -34,18 +36,19 @@ function Entry({ entry }) {
 
   // Modal open/close event handlers
   function openModal() {
-    setIsOpen(true);
+    setCreateModal(true);
   }
   function closeModal() {
-    setIsOpen(false);
+    setCreateModal(false);
   }
 
-  var entryId = entry[counter].id
-  console.log(entryId)
-  console.log(entry[counter].id)
+  var entryId = entry[counter].id;
+  console.log(entryId);
+  console.log(entry[counter].id);
 
   function onDelete(entry) {
     axios.delete(`http://localhost:8000/entries/${entryId}`)
+    window.location.reload()
   }
 
   console.log(entry);
@@ -97,7 +100,7 @@ function Entry({ entry }) {
           New Entry
         </button>
         <Modal
-          isOpen={modalIsOpen}
+          isOpen={createModal}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Create New Entry"
@@ -106,10 +109,12 @@ function Entry({ entry }) {
         </Modal>
 
         <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
+        
         <div>
           {showEdit ? (
             <div className="editButtons">
-              <button>Edit</button> <button onClick = {onDelete}>delete</button>
+              <button id = "editButton">Edit</button>
+                <button id = "deleteButton"onClick={onDelete}>delete</button>
             </div>
           ) : null}
         </div>
