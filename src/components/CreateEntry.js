@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function CreateEntry({ closeModal, entry }) {
+function CreateEntry({ closeModal, entry, data }) {
   const [formState, setFormState] = useState({
     photo_url: "",
     body: "",
     date: "",
-    trip_id: entry[0].trip_id
+    trip_id: data.id
   });
+
+  console.log(data)
 
   // Event handlers to capture data from form
   const handleChange = (ev) => {

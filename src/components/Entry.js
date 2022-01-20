@@ -19,18 +19,33 @@ const customStyles = {
   },
 };
 
-function Entry({ entry }) {
+function Entry({ entry, data }) {
   const [counter, setCounter] = useState(0);
   const [createModal, setCreateModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+
+  console.log(data)
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
   // If no entries, return message
   if (entry !== undefined) {
     if (entry.length === 0) {
-      return <h3>No Entries Found</h3>;
+      return( 
+        <>
+          <h3>No Entries Found</h3>
+          <button onClick = {openCreateModal}>Add a New entry</button>
+          <Modal
+          isOpen={createModal}
+          onRequestClose={closeCreateModal}
+          style={customStyles}
+          contentLabel="Create New Entry"
+        >
+          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} data={data}/>
+        </Modal>
+        </>
+      )
     }
   }
 
@@ -111,7 +126,7 @@ function Entry({ entry }) {
           style={customStyles}
           contentLabel="Create New Entry"
         >
-          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} />
+          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} data={data} />
         </Modal>
 
         <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />

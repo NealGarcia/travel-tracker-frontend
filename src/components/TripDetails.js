@@ -38,7 +38,9 @@ function TripDetails(props) {
             <Link to = "/" className = "backButton"><p>Go Back</p></Link>
             <h1 className = "detailsTitle"> {data.location}</h1>
             <p className = "detailsDate">{new_start_date} - {new_end_date}</p>
-            <Entry entry = {entry}/>
+            <Entry 
+                entry = {entry}
+                data = {data}    />
         </div>
     );
 }
