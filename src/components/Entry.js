@@ -40,7 +40,6 @@ function Entry({ entry }) {
 
   console.log(entry);
 
-
   return (
     <div className="entry">
       <div className="container">
@@ -51,6 +50,9 @@ function Entry({ entry }) {
         />
         <h2>{entry[counter].date}</h2>
         <h3>{entry[counter].body}</h3>
+
+        <p>{counter+1}/{entry.length}</p>
+
         <div className="arrowButtons">
           {/* Click Image Left */}
           <button
@@ -79,14 +81,14 @@ function Entry({ entry }) {
             <BsFillArrowRightCircleFill />
           </button>
         </div>
-        <button className="newEntry" onClick = {openModal}>
+        <button className="newEntry" onClick={openModal}>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Create New Entry"
           >
-            <CreateEntry closeModal={closeModal} entry = {entry} />
+            <CreateEntry closeModal={closeModal} entry={entry} />
           </Modal>
           New Entry
         </button>
