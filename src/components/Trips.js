@@ -39,6 +39,9 @@ function Trips(props) {
     setIsOpen(false);
   }
 
+  if (trips === undefined) return <h3>Loading</h3>;
+
+
   return (
     <div className = "trips">
       <h2 className = "tripHeader">All Trips</h2>
