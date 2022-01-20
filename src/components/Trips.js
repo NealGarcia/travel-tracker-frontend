@@ -41,18 +41,16 @@ function Trips(props) {
 
   if (trips === undefined) return <h3>Loading</h3>;
 
-
   return (
-    <div className = "trips">
-      <h2 className = "tripHeader">All Trips</h2>
+    <div className="trips">
+      <h2 className="tripHeader">All Trips</h2>
       <div className="tripContainer">
-        
         <div className="tripCard" id="newTrip" onClick={openModal}>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             style={customStyles}
-            contentLabel="Example Modal"
+            contentLabel="Create New Trip"
           >
             <CreateTrip closeModal={closeModal} />
           </Modal>

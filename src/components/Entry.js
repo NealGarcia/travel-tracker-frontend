@@ -1,10 +1,32 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import Modal from "react-modal";
+import CreateEntry from "./CreateEntry";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 function Entry({ entry }) {
   const [counter, setCounter] = useState(0);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  // Modal open/close event handlers
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
@@ -29,7 +51,7 @@ function Entry({ entry }) {
         />
         <h2>{entry[counter].date}</h2>
         <h3>{entry[counter].body}</h3>
-        <div>
+        <div className="arrowButtons">
           {/* Click Image Left */}
           <button
             type="button"
@@ -57,6 +79,17 @@ function Entry({ entry }) {
             <BsFillArrowRightCircleFill />
           </button>
         </div>
+        <button className="newEntry" onClick = {openModal}>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Create New Entry"
+          >
+            <CreateEntry closeModal={closeModal} />
+          </Modal>
+          New Entry
+        </button>
       </div>
     </div>
   );

@@ -8,10 +8,6 @@ function CreateTrip({ closeModal }) {
     end_date: "",
   })
 
-  // const [location, setLocation] = useState("");
-  // const [startDate, setStartDate] = useState("");
-  // const [endDate, setEndDate] = useState("");
-
   const handleChange = (ev) => {
     setFormState({...formState, [ev.target.name]: ev.target.value})
     console.log(formState)
@@ -25,7 +21,6 @@ function CreateTrip({ closeModal }) {
       data: formState
     })
   }
-
 
   return (
     <div>
