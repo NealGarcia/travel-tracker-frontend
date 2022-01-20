@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function CreateTrip({ closeModal }) {
+function EditEntry({ closeModal, entry, counter }) {
   const [formState, setFormState] = useState({
-    location: "",
-    start_date: "",
-    end_date: "",
-    entry: [],
+    photo_url: "",
+    body: "",
+    date: "",
+    trip_id: entry[0].trip_id,
   });
 
   // Event handlers to capture data from form
@@ -18,32 +18,37 @@ function CreateTrip({ closeModal }) {
   const handleSubmit = (ev) => {
     console.log(formState);
     axios({
-      method: "post",
-      url: `http://localhost:8000/trips/`,
+      method: "patch",
+      url: `http://localhost:8000/entries/${entry[counter].id}`,
       data: formState,
     });
   };
 
   return (
     <div>
-      <form className="createTripForm">
-        <h3>New Trip</h3>
+      <form className="editEntryForm">
+        <h3>Edit Entry</h3>
         <label>
-          Location
+          Image
           <input
             type="text"
-            name="location"
-            placeholder="Location"
+            name="photo_url"
+            placeholder="Image URL"
             onChange={handleChange}
           ></input>
         </label>
         <label>
-          Start Date
-          <input type="date" name="start_date" onChange={handleChange}></input>
+          Date
+          <input type="date" name="date" onChange={handleChange}></input>
         </label>
         <label>
-          End Date
-          <input type="date" name="end_date" onChange={handleChange}></input>
+          Description
+          <textarea
+            type="text"
+            name="body"
+            placeholder="Description"
+            onChange={handleChange}
+          ></textarea>
         </label>
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={closeModal}>Cancel</button>
@@ -52,4 +57,4 @@ function CreateTrip({ closeModal }) {
   );
 }
 
-export default CreateTrip;
+export default EditEntry;

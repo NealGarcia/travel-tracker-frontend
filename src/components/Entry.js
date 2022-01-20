@@ -5,7 +5,7 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import EditEntry from "./EditEntry"
 
 // modal styles
 const customStyles = {
@@ -22,7 +22,7 @@ const customStyles = {
 function Entry({ entry }) {
   const [counter, setCounter] = useState(0);
   const [createModal, setCreateModal] = useState(false);
-  const [editModal, setEditModal] = useState(false)
+  const [editModal, setEditModal] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
   // Loading if data is still undefined, return message
@@ -35,11 +35,17 @@ function Entry({ entry }) {
   }
 
   // Modal open/close event handlers
-  function openModal() {
+  function openCreateModal() {
     setCreateModal(true);
   }
-  function closeModal() {
+  function openEditModal() {
+    setEditModal(true)
+  }
+  function closeCreateModal() {
     setCreateModal(false);
+  }
+  function closeEditModal() {
+    setEditModal(false)
   }
 
   var entryId = entry[counter].id;
@@ -47,8 +53,8 @@ function Entry({ entry }) {
   console.log(entry[counter].id);
 
   function onDelete(entry) {
-    axios.delete(`http://localhost:8000/entries/${entryId}`)
-    window.location.reload()
+    axios.delete(`http://localhost:8000/entries/${entryId}`);
+    window.location.reload();
   }
 
   console.log(entry);
@@ -96,25 +102,41 @@ function Entry({ entry }) {
             <BsFillArrowRightCircleFill />
           </button>
         </div>
-        <button className="newEntry" onClick={openModal}>
+        <button className="newEntry" onClick={openCreateModal}>
           New Entry
         </button>
         <Modal
           isOpen={createModal}
-          onRequestClose={closeModal}
+          onRequestClose={closeCreateModal}
           style={customStyles}
           contentLabel="Create New Entry"
         >
-          <CreateEntry closeModal={closeModal} entry={entry} />
+          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} />
         </Modal>
 
         <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
-        
+
         <div>
           {showEdit ? (
             <div className="editButtons">
-              <button id = "editButton">Edit</button>
-                <button id = "deleteButton"onClick={onDelete}>delete</button>
+              <button id="editEntry" onClick = {openEditModal}>
+                Edit
+              </button>
+              <button id="deleteButton" onClick={onDelete}>
+                delete
+              </button>
+
+              <Modal
+                isOpen = {editModal}
+                onRequestClose = {closeEditModal}
+                style={customStyles}
+                contentLabel="Edit Entry">
+                  <EditEntry closeCreateModal={closeCreateModal} entry={entry} counter={counter}/>
+                </Modal>
+
+
+
+
             </div>
           ) : null}
         </div>
