@@ -24,6 +24,8 @@ function EditEntry({ closeModal, entry, counter }) {
     });
   };
 
+  var value = entry[counter].photo_url
+
   return (
     <div>
       <form className="editEntryForm">
@@ -33,7 +35,7 @@ function EditEntry({ closeModal, entry, counter }) {
           <input
             type="text"
             name="photo_url"
-            placeholder="Image URL"
+            placeholder="New Image URL"
             onChange={handleChange}
           ></input>
         </label>
@@ -46,7 +48,7 @@ function EditEntry({ closeModal, entry, counter }) {
           <textarea
             type="text"
             name="body"
-            placeholder="Description"
+            placeholder="New Description"
             onChange={handleChange}
           ></textarea>
         </label>
