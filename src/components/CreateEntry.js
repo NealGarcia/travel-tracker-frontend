@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function CreateEntry({ closeModal }) {
+function CreateEntry({ closeModal, entry }) {
   const [formState, setFormState] = useState({
     photo_url: "",
     body: "",
     date: "",
+    trip_id: entry[0].trip_id
   });
 
   // Event handlers to capture data from form
@@ -15,6 +16,7 @@ function CreateEntry({ closeModal }) {
   };
 
   const handleSubmit = (ev) => {
+    ev.preventDefault()
     console.log(formState);
     axios({
       method: "post",

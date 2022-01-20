@@ -39,8 +39,7 @@ function Entry({ entry }) {
   }
 
   console.log(entry);
-  console.log(entry[0].photo_url);
-  console.log(entry.length);
+
 
   return (
     <div className="entry">
@@ -87,7 +86,7 @@ function Entry({ entry }) {
             style={customStyles}
             contentLabel="Create New Entry"
           >
-            <CreateEntry closeModal={closeModal} />
+            <CreateEntry closeModal={closeModal} entry = {entry} />
           </Modal>
           New Entry
         </button>
