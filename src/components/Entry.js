@@ -31,13 +31,16 @@ function Entry({ entry, data }) {
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
-  // If no entries, return message
+  // If no entries, return message and render buttons to create new entry
   if (entry !== undefined) {
     if (entry.length === 0) {
       return( 
         <>
           <h3>No Entries Found</h3>
           <button onClick = {openCreateModal}>Add a New entry</button>
+          <button id="editTrip" onClick = {openTripModal}>
+                Edit Trip
+              </button>
           <Modal
           isOpen={createModal}
           onRequestClose={closeCreateModal}
@@ -46,6 +49,13 @@ function Entry({ entry, data }) {
         >
           <CreateEntry closeCreateModal={closeCreateModal} entry={entry} data={data}/>
         </Modal>
+        <Modal
+                isOpen = {editTripModal}
+                onRequestClose = {closeTripModal}
+                style={customStyles}
+                contentLabel="Edit Trip">
+                  <EditTrip closeCreateModal={closeTripModal} entry={entry} data = {data}/>
+                </Modal>
         </>
       )
     }

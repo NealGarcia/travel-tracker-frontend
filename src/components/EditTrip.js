@@ -22,6 +22,10 @@ function EditTrip({entry, data, closeTripModal}) {
           data: formState,
         });
       };
+
+      function onDelete(){
+          axios.delete(`http://localhost:8000/trips/${data.id}`)
+      }
       
       console.log(data.id)
 
@@ -52,6 +56,7 @@ function EditTrip({entry, data, closeTripModal}) {
             <input type="date" name="end_date" onChange={handleChange}></input>
           </label>
           <button onClick={handleSubmit}>Submit</button>
+          <button onClick = {onDelete}>Delete</button>
           <button onClick={closeTripModal}>Cancel</button>
         </form>
       </div>

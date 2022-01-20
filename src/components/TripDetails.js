@@ -9,6 +9,8 @@ function TripDetails(props) {
         end_date: "",
         entry: ""
     })
+    if (data.entry !== undefined)
+        var entry = data.entry;
 
     useEffect(() => {
         async function getData() {
@@ -28,10 +30,6 @@ function TripDetails(props) {
     var new_start_date = ( [ initial_start_date[1], initial_start_date[0], initial_start_date[2] ].join('/'))
     var new_end_date = ( [ initial_end_date[1], initial_end_date[0], initial_end_date[2] ].join('/'))
     
-    if (data.entry !== undefined)
-        var entry = data.entry;
-
-
     return (
         <div>
             <h2 className = "test">TEST</h2>
