@@ -14,7 +14,6 @@ function TripDetails(props) {
         axios.get(`http://localhost:8000/trips/${props.match.params.id}?format=json`)
             .then((response) => {
                 setData(response.data)
-                console.log(data)
             })
     }
     useEffect(() => {
