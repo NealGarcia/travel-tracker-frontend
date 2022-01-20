@@ -159,7 +159,7 @@ function Entry({ entry, data }) {
                 onRequestClose = {closeTripModal}
                 style={customStyles}
                 contentLabel="Edit Trip">
-                  <EditTrip closeCreateModal={closeCreateModal} entry={entry}/>
+                  <EditTrip closeCreateModal={closeTripModal} entry={entry} data = {data}/>
                 </Modal>
 
 
@@ -169,7 +169,7 @@ function Entry({ entry, data }) {
                 onRequestClose = {closeEditModal}
                 style={customStyles}
                 contentLabel="Edit Entry">
-                  <EditEntry closeCreateModal={closeCreateModal} entry={entry} counter={counter}/>
+                  <EditEntry closeCreateModal={closeEditModal} entry={entry} counter={counter}/>
                 </Modal>
             </div>
           ) : null}
