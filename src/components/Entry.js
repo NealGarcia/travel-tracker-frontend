@@ -4,6 +4,7 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
 
+// modal styles
 const customStyles = {
   content: {
     top: "50%",

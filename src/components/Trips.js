@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import CreateTrip from "./CreateTrip";
 
+// modal styles
 const customStyles = {
   content: {
     top: "50%",

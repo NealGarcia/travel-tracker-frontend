@@ -8,6 +8,7 @@ function CreateTrip({ closeModal }) {
     end_date: "",
   })
 
+  // Event handlers to capture data from form
   const handleChange = (ev) => {
     setFormState({...formState, [ev.target.name]: ev.target.value})
     console.log(formState)
@@ -25,14 +26,13 @@ function CreateTrip({ closeModal }) {
   return (
     <div>
       <form className="createTripForm">
-        <h3>Create a New Trip</h3>
+        <h3>New Trip</h3>
         <label>
           Location
           <input
             type="text"
             name="location"
             placeholder="Location"
-            // onChange={(ev) => setLocation(ev.target.value)}
             onChange = {handleChange}
           ></input>
         </label>
@@ -41,8 +41,6 @@ function CreateTrip({ closeModal }) {
           <input
             type="date"
             name="start_date"
-            placeholder="Start Date"
-            // onChange={(ev) => setStartDate(ev.target.value)}
             onChange = {handleChange}
           ></input>
         </label>
@@ -51,8 +49,6 @@ function CreateTrip({ closeModal }) {
           <input
             type="date"
             name="end_date"
-            placeholder="End Date"
-            // onChange={(ev) => setEndDate(ev.target.value)}
             onChange = {handleChange}
           ></input>
         </label>
