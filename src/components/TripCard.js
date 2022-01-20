@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
+
 function TripCard(props) {
     return (
         <Link to = {`/trip/${props.trip.id}`}>

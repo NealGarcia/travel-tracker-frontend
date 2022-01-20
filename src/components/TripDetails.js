@@ -40,7 +40,7 @@ function TripDetails(props) {
             <p className = "detailsDate">{new_start_date} - {new_end_date}</p>
             <Entry 
                 entry = {entry}
-                data = {data}    />
+                data = {data}/>
         </div>
     );
 }

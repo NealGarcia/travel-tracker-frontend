@@ -41,6 +41,7 @@ function Trips(props) {
   }
 
   if (trips === undefined) return <h3>Loading</h3>;
+  console.log(trips)
 
   return (
     <div className="trips">
@@ -59,7 +60,7 @@ function Trips(props) {
         </div>
 
         {trips.map((trip) => (
-          <TripCard trip={trip} />
+          <TripCard trip={trip} trips={trips} />
         ))}
       </div>
     </div>

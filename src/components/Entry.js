@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
 import axios from "axios";
 import EditEntry from "./EditEntry"
+import EditTrip from "./EditTrip"
 
 // modal styles
 const customStyles = {
@@ -24,6 +25,7 @@ function Entry({ entry, data }) {
   const [createModal, setCreateModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [editTripModal, setEditTripModal] = useState(false);
 
   console.log(data)
 
@@ -56,17 +58,25 @@ function Entry({ entry, data }) {
   function openEditModal() {
     setEditModal(true)
   }
+  function openTripModal() {
+    setEditTripModal(true)
+  }
   function closeCreateModal() {
     setCreateModal(false);
   }
   function closeEditModal() {
     setEditModal(false)
   }
+  function closeTripModal() {
+    setEditTripModal(false)
+  }
+  
 
   var entryId = entry[counter].id;
   console.log(entryId);
   console.log(entry[counter].id);
 
+  // Delete Request
   function onDelete(entry) {
     axios.delete(`http://localhost:8000/entries/${entryId}`);
     window.location.reload();
@@ -135,11 +145,24 @@ function Entry({ entry, data }) {
           {showEdit ? (
             <div className="editButtons">
               <button id="editEntry" onClick = {openEditModal}>
-                Edit
+                Edit Entry
+              </button>
+              <button id="editTrip" onClick = {openTripModal}>
+                Edit Trip
               </button>
               <button id="deleteButton" onClick={onDelete}>
-                delete
+                Delete
               </button>
+
+              <Modal
+                isOpen = {editTripModal}
+                onRequestClose = {closeTripModal}
+                style={customStyles}
+                contentLabel="Edit Trip">
+                  <EditTrip closeCreateModal={closeCreateModal} entry={entry}/>
+                </Modal>
+
+
 
               <Modal
                 isOpen = {editModal}
@@ -148,10 +171,6 @@ function Entry({ entry, data }) {
                 contentLabel="Edit Entry">
                   <EditEntry closeCreateModal={closeCreateModal} entry={entry} counter={counter}/>
                 </Modal>
-
-
-
-
             </div>
           ) : null}
         </div>
