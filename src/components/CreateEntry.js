@@ -16,7 +16,6 @@ function CreateEntry({ closeModal, entry }) {
   };
 
   const handleSubmit = (ev) => {
-    ev.preventDefault()
     console.log(formState);
     axios({
       method: "post",
