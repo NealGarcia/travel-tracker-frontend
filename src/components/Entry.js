@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
+import axios from "axios";
 
 // modal styles
 const customStyles = {
@@ -19,15 +21,7 @@ const customStyles = {
 function Entry({ entry }) {
   const [counter, setCounter] = useState(0);
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  // Modal open/close event handlers
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [showEdit, setShowEdit] = useState(false);
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
@@ -36,6 +30,22 @@ function Entry({ entry }) {
     if (entry.length === 0) {
       return <h3>No Entries Found</h3>;
     }
+  }
+
+  // Modal open/close event handlers
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  var entryId = entry[counter].id
+  console.log(entryId)
+  console.log(entry[counter].id)
+
+  function onDelete(entry) {
+    axios.delete(`http://localhost:8000/entries/${entryId}`)
   }
 
   console.log(entry);
@@ -51,7 +61,9 @@ function Entry({ entry }) {
         <h2>{entry[counter].date}</h2>
         <h3>{entry[counter].body}</h3>
 
-        <p>{counter+1}/{entry.length}</p>
+        <p>
+          {counter + 1}/{entry.length}
+        </p>
 
         <div className="arrowButtons">
           {/* Click Image Left */}
@@ -82,16 +94,25 @@ function Entry({ entry }) {
           </button>
         </div>
         <button className="newEntry" onClick={openModal}>
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Create New Entry"
-          >
-            <CreateEntry closeModal={closeModal} entry={entry} />
-          </Modal>
           New Entry
         </button>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Create New Entry"
+        >
+          <CreateEntry closeModal={closeModal} entry={entry} />
+        </Modal>
+
+        <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
+        <div>
+          {showEdit ? (
+            <div className="editButtons">
+              <button>Edit</button> <button onClick = {onDelete}>delete</button>
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   );
