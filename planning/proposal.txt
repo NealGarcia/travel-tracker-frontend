@@ -1,0 +1,40 @@
+Project Idea:
+'Travel-Tracker' is an app where users can document and relive their vacations, trips, and journeys. Users can view their user-specific database of travel entries, and log, edit, and delete their entries with information such as the destination, dates they traveled, images.
+
+User stories:
+-- MVP --
+- As a traveler, I want to be able to log and create user-specific entries of my travels, complete with pictures and descriptions.
+- As a traveler, I want to be able to view my past entries.
+- As a user, I want to be able to login to a user-specific profile.
+- As a user, I want to be able to edit and delete my entries.
+
+-- Stretch goals --
+- As a social-media user, I want to view other profiles.
+- As a social-media user, I want to see other users' entries.
+- As a traveler, I want to see on a map, the destinations I've traveled.
+- As a user, I want to be able to use the app on my phone and internet browser.
+
+Tech Stack:
+Frontend: React - Backend: Django - Database: PostgreSQL
+
+Backend Models:
+Trip Entry
+	- Destination
+	- Start_date
+	- End_date
+	- Body
+Picture
+	- Img_url
+	- Body
+	- Date
+
+React Component Hierarchy
+
+Components: 
+	App
+	- Entries
+	- Entry
+	- Create New Entry	
+	- Edit Entry
+	- Entry Details
+	
