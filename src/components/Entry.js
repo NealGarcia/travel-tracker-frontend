@@ -5,8 +5,8 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Modal from "react-modal";
 import CreateEntry from "./CreateEntry";
 import axios from "axios";
-import EditEntry from "./EditEntry"
-import EditTrip from "./EditTrip"
+import EditEntry from "./EditEntry";
+import EditTrip from "./EditTrip";
 
 // modal styles
 const customStyles = {
@@ -27,37 +27,46 @@ function Entry({ entry, data }) {
   const [showEdit, setShowEdit] = useState(false);
   const [editTripModal, setEditTripModal] = useState(false);
 
-  console.log(data)
+  console.log(data);
 
   // Loading if data is still undefined, return message
   if (entry === undefined) return <h3>Loading</h3>;
   // If no entries, return message and render buttons to create new entry
   if (entry !== undefined) {
     if (entry.length === 0) {
-      return( 
+      return (
         <>
           <h3>No Entries Found</h3>
-          <button onClick = {openCreateModal}>Add a New entry</button>
-          <button id="editTrip" onClick = {openTripModal}>
-                Edit Trip
-              </button>
+          <button onClick={openCreateModal}>Add a New entry</button>
+          <button id="editTrip" onClick={openTripModal}>
+            Edit Trip
+          </button>
           <Modal
-          isOpen={createModal}
-          onRequestClose={closeCreateModal}
-          style={customStyles}
-          contentLabel="Create New Entry"
-        >
-          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} data={data}/>
-        </Modal>
-        <Modal
-                isOpen = {editTripModal}
-                onRequestClose = {closeTripModal}
-                style={customStyles}
-                contentLabel="Edit Trip">
-                  <EditTrip closeCreateModal={closeTripModal} entry={entry} data = {data}/>
-                </Modal>
+            isOpen={createModal}
+            onRequestClose={closeCreateModal}
+            style={customStyles}
+            contentLabel="Create New Entry"
+          >
+            <CreateEntry
+              closeCreateModal={closeCreateModal}
+              entry={entry}
+              data={data}
+            />
+          </Modal>
+          <Modal
+            isOpen={editTripModal}
+            onRequestClose={closeTripModal}
+            style={customStyles}
+            contentLabel="Edit Trip"
+          >
+            <EditTrip
+              closeCreateModal={closeTripModal}
+              entry={entry}
+              data={data}
+            />
+          </Modal>
         </>
-      )
+      );
     }
   }
 
@@ -66,28 +75,27 @@ function Entry({ entry, data }) {
     setCreateModal(true);
   }
   function openEditModal() {
-    setEditModal(true)
+    setEditModal(true);
   }
   function openTripModal() {
-    setEditTripModal(true)
+    setEditTripModal(true);
   }
   function closeCreateModal() {
     setCreateModal(false);
   }
   function closeEditModal() {
-    setEditModal(false)
+    setEditModal(false);
   }
   function closeTripModal() {
-    setEditTripModal(false)
+    setEditTripModal(false);
   }
-  
 
   var entryId = entry[counter].id;
   console.log(entryId);
   console.log(entry[counter].id);
 
   // Delete Request
-  function onDelete(entry) {
+  function onDelete() {
     axios.delete(`http://localhost:8000/entries/${entryId}`);
     window.location.reload();
   }
@@ -146,7 +154,11 @@ function Entry({ entry, data }) {
           style={customStyles}
           contentLabel="Create New Entry"
         >
-          <CreateEntry closeCreateModal={closeCreateModal} entry={entry} data={data} />
+          <CreateEntry
+            closeCreateModal={closeCreateModal}
+            entry={entry}
+            data={data}
+          />
         </Modal>
 
         <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
@@ -154,10 +166,10 @@ function Entry({ entry, data }) {
         <div>
           {showEdit ? (
             <div className="editButtons">
-              <button id="editEntry" onClick = {openEditModal}>
+              <button id="editEntry" onClick={openEditModal}>
                 Edit Entry
               </button>
-              <button id="editTrip" onClick = {openTripModal}>
+              <button id="editTrip" onClick={openTripModal}>
                 Edit Trip
               </button>
               <button id="deleteButton" onClick={onDelete}>
@@ -165,22 +177,30 @@ function Entry({ entry, data }) {
               </button>
 
               <Modal
-                isOpen = {editTripModal}
-                onRequestClose = {closeTripModal}
+                isOpen={editTripModal}
+                onRequestClose={closeTripModal}
                 style={customStyles}
-                contentLabel="Edit Trip">
-                  <EditTrip closeCreateModal={closeTripModal} entry={entry} data = {data}/>
-                </Modal>
-
-
+                contentLabel="Edit Trip"
+              >
+                <EditTrip
+                  closeCreateModal={closeTripModal}
+                  entry={entry}
+                  data={data}
+                />
+              </Modal>
 
               <Modal
-                isOpen = {editModal}
-                onRequestClose = {closeEditModal}
+                isOpen={editModal}
+                onRequestClose={closeEditModal}
                 style={customStyles}
-                contentLabel="Edit Entry">
-                  <EditEntry closeCreateModal={closeEditModal} entry={entry} counter={counter}/>
-                </Modal>
+                contentLabel="Edit Entry"
+              >
+                <EditEntry
+                  closeCreateModal={closeEditModal}
+                  entry={entry}
+                  counter={counter}
+                />
+              </Modal>
             </div>
           ) : null}
         </div>
