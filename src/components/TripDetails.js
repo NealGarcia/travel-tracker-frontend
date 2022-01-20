@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
 import { Link } from "react-router-dom";
 import Entry from './Entry';
 
@@ -7,20 +6,21 @@ function TripDetails(props) {
     const [data, setData] = useState({
         location: "",
         start_date: "",
-        end_date: ""
+        end_date: "",
+        entry: ""
     })
-    
-    function getData(){
-        axios.get(`http://localhost:8000/trips/${props.match.params.id}?format=json`)
-            .then((response) => {
-                setData(response.data)
-            })
-    }
-    useEffect(() => {
-        getData()
-    }, [])
 
-    console.log(data)
+    useEffect(() => {
+        async function getData() {
+          const request = fetch(`http://localhost:8000/trips/${props.match.params.id}?format=json`);
+          const response = await request;
+          const parsed = await response.json();
+          setData(parsed);
+        }
+        getData();
+      }, []);
+
+    // console.log(data)
 
     // Reformat dates from YYYY-DD-MM to DD/MM/YYYY
     var initial_start_date = (data.start_date.split("-").reverse())
@@ -29,9 +29,8 @@ function TripDetails(props) {
     var new_end_date = ( [ initial_end_date[1], initial_end_date[0], initial_end_date[2] ].join('/'))
     
     if (data.entry !== undefined)
-        var entryUrl = data.entry;
+        var entry = data.entry;
 
-    console.log(entryUrl)
 
     return (
         <div>
@@ -39,7 +38,7 @@ function TripDetails(props) {
             <Link to = "/" className = "backButton"><p>Go Back</p></Link>
             <h1 className = "detailsTitle"> {data.location}</h1>
             <p className = "detailsDate">{new_start_date} - {new_end_date}</p>
-            <Entry entryUrl = {entryUrl}/>
+            <Entry entry = {entry}/>
         </div>
     );
 }

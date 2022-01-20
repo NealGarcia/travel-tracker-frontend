@@ -1,40 +1,36 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useCallback } from "react";
+import Carousel from "react-material-ui-carousel";
+import { Paper, Button } from "@mui/material";
 
-function Entry({ entryUrl }) {
-  const [data, setData] = useState({
-    photo_url: "",
-    body: "",
-    date: "",
-    trip: "",
-  });
-
-  if (entryUrl !== undefined) {
-    if (entryUrl.length === 0) {
-      var error = "No entries found";
+function Entry({ entry }) {
+  // Loading if data is still undefined, return message
+  if (entry === undefined) return <h3>Loading</h3> 
+  // If no entries, return message
+  if (entry !== undefined) {
+    if (entry.length === 0) {
+      return <h3>No Entries Found</h3>
     }
   }
 
-  useEffect(() => {
-    async function getData() {
-      const request = fetch(entryUrl);
-      const response = await request;
-      const parsed = await response.json();
-      setData(parsed);
-    }
-    getData();
-  }, []);
-
-  if (data === undefined) return null;
-
-  console.log(entryUrl);
-  console.log(data);
+  console.log(entry)
+  console.log(entry[0].photo_url)
 
   return (
     <div className="entry">
-        {error}
+      {entry.map((entry) => (
+        <div>
+          <h3>{entry.body}</h3>
+          <img src = {entry.photo_url}alt ='entryPhoto'/>
+        </div>
+      ))}
+
+
+
+
+
+
+
     </div>
   );
 }
-
 export default Entry;
