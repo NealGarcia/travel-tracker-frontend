@@ -20,6 +20,7 @@ function Trips(props) {
   // State Variables
   const [trips, setTrips] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+
   // API Fetch
   useEffect(() => {
     const url = `http://localhost:8000/trips/?format=json`;
@@ -48,7 +49,7 @@ function Trips(props) {
       <h2 className="splash">
         Document and relive your journeys and experiences.
       </h2>
-      {/* <h2 className="tripHeader">All Trips</h2> */}
+
       <div className="tripContainer">
         {trips.map((trip) => (
           <TripCard trip={trip} trips={trips} />
@@ -68,6 +69,7 @@ function Trips(props) {
             <BsPlusCircle></BsPlusCircle>
           </div>
         </div>
+        
       </div>
     </div>
   );

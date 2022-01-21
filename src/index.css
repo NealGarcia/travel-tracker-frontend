@@ -15,6 +15,14 @@ a:-webkit-any-link {
   color: inherit;
 }
 
+a{
+  transition: 0.2s ease-in-out;
+}
+
+a:hover{
+  margin-top: -5px;
+}
+
 .header {
   margin-top: auto;
   margin: auto;

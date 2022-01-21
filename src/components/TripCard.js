@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function TripCard({ trip, trips }) {
+  // Reformat dates from YYYY-DD-MM to DD/MM/YYYY
   var initial_start_date = trip.start_date.split("-").reverse();
   var initial_end_date = trip.end_date.split("-").reverse();
   var new_start_date = [
