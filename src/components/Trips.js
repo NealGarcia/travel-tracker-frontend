@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TripCard from "./TripCard";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import CreateTrip from "./CreateTrip";
+import { BsPlusCircle } from "react-icons/bs";
 
 // modal styles
 const customStyles = {
@@ -41,10 +41,13 @@ function Trips(props) {
   }
 
   if (trips === undefined) return <h3>Loading</h3>;
-  console.log(trips)
+  console.log(trips);
 
   return (
     <div className="trips">
+      <h2 className="splash">
+        Document and relive your journeys and experiences.
+      </h2>
       <h2 className="tripHeader">All Trips</h2>
       <div className="tripContainer">
         <div className="tripCard" id="newTrip" onClick={openModal}>
@@ -56,7 +59,10 @@ function Trips(props) {
           >
             <CreateTrip closeModal={closeModal} />
           </Modal>
-          <p>Create New Trip</p>
+          <div className="createWrapper">
+            <p>Create New Trip</p>
+            <BsPlusCircle></BsPlusCircle>
+          </div>
         </div>
 
         {trips.map((trip) => (

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Oxygen:wght@300;400;700&display=swap');
+
 body {
-  font-family: 'Helvetica';
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
   margin: 0px;
   color: white;
   background-image: url('./assets/bg_image.jpeg');
   background-attachment: fixed;
   background-size: cover;
-  background-color: black;
-
 }
 
 a:-webkit-any-link {
@@ -23,7 +23,10 @@ a:-webkit-any-link {
   height: 80px;
   padding: 5px;
   position: fixed;
-  z-index: 1;
+  background-image: url('./assets/bg_image.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 2;
 }
 
 .header h1{
@@ -42,19 +45,10 @@ a:-webkit-any-link {
   opacity: 0.5;
 }
 
-.trips {
-  padding-top: 100px;
-}
-
-
-.tripContainer{
-  width: 75%;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.splash{
+  margin-top: 50px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .tripHeader{
@@ -62,31 +56,64 @@ a:-webkit-any-link {
   margin-top: 40px;
 }
 
-.tripCard{
-  background-color: lightgray;
-  margin-right: 10px;
-  height: 150px;
-  width: 200px;
-  position: relative;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-  text-align: center;
+.trips {
+  padding-top: 100px;
 }
 
-.tripContent{
-  padding-top: 40px;
+.tripContainer{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 30px;
+}
+
+.tripCard{
+  background-color: lightgray;
+  height: 150px;
+  min-height: 150px;
+  width: 200px;
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+  flex: 0 1 calc(25% - 1em);
+  border-radius: 10px;
+}
+
+.cardImg{
+  display: block;
+  object-fit: scale-down;
+  object-position: center center;
 }
 
 #newTrip{
+  min-width: 200px;
   max-width: 200px;
   max-height: 150px;
   cursor: pointer;
+  background: none;
+  border: 1px solid #FFFFFF;
+  transition: 0.15s ease-in-out
+}
+
+#newTrip:hover{
+  background-color: white;
+  color: #000000;
 }
 
 #newTrip p{
   margin-top:0px;
   padding-top: 40px;
+}
+
+.createWrapper{
+  margin-top: 5px;
 }
 
 .createTripForm {

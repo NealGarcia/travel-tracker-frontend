@@ -6,7 +6,7 @@ function Header(props) {
     return (
         <div className = 'header'>
             <Link to="/">
-                <h1>travel-trackr</h1>
+                <h1>wanderlust</h1>
             </Link>
         </div>
     );
