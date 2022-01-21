@@ -10,10 +10,11 @@ function TripCard({ trip, trips }) {
     <Link to={`/trip/${trip.id}`}>
       <div className="tripCard">
         <h3>{trip.location}</h3>
-      </div>
-      {/* {trip.entry.length > 0 && (
+        {trip.entry.length > 0 && (
         <img className="cardImg" src={trip.entry[0].photo_url} alt="tripImg" />
-      )} */}
+      )}
+      </div>
+      
     </Link>
   );
 }

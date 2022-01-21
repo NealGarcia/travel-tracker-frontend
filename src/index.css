@@ -74,28 +74,29 @@ a:-webkit-any-link {
 }
 
 .tripCard{
-  background-color: lightgray;
-  height: 150px;
-  min-height: 150px;
-  width: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 300px;
+  width: 400px;
   position: relative;
   margin-top: 20px;
   text-align: center;
   overflow: hidden;
   flex: 0 1 calc(25% - 1em);
   border-radius: 10px;
+  /* box-shadow: 0 2px 5px 3px rgba(0,0,0,0.2); */
 }
 
 .cardImg{
-  display: block;
-  object-fit: scale-down;
-  object-position: center center;
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  margin-top: -60px;
 }
 
 #newTrip{
-  min-width: 200px;
-  max-width: 200px;
-  max-height: 150px;
+  height: 300px;
+  min-width:400px;
+  max-width: 400px;
   cursor: pointer;
   background: none;
   border: 1px solid #FFFFFF;
@@ -103,8 +104,8 @@ a:-webkit-any-link {
 }
 
 #newTrip:hover{
-  background-color: white;
-  color: #000000;
+  background-color: rgba(255,255,255, 0.2);
+  border: 1px solid rgba(255,255,255, 0.2);
 }
 
 #newTrip p{
@@ -113,7 +114,7 @@ a:-webkit-any-link {
 }
 
 .createWrapper{
-  margin-top: 5px;
+  margin-top: 65px;
 }
 
 .createTripForm {

@@ -50,6 +50,10 @@ function Trips(props) {
       </h2>
       <h2 className="tripHeader">All Trips</h2>
       <div className="tripContainer">
+        {trips.map((trip) => (
+          <TripCard trip={trip} trips={trips} />
+        ))}
+
         <div className="tripCard" id="newTrip" onClick={openModal}>
           <Modal
             isOpen={modalIsOpen}
@@ -64,10 +68,6 @@ function Trips(props) {
             <BsPlusCircle></BsPlusCircle>
           </div>
         </div>
-
-        {trips.map((trip) => (
-          <TripCard trip={trip} trips={trips} />
-        ))}
       </div>
     </div>
   );
