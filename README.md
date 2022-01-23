@@ -4,7 +4,7 @@ React Art Gallery is a front-end web application that utilizes third-party data 
 
 'travltrackr' is a full-stack application with full CRUD funcitonality where users can view, create, update, and delete records and entries of the travels. The app accesses the traveltracker API backend made with the Django backend framework. The front-end was created using ReactJS and CSS styling. 
 
-Clink the following link to view the working application.
+Click the following link to view the working application:
 [travltrackr](#)
 
 -- Insert Screenshots Here --
