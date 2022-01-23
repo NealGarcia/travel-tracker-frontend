@@ -14,7 +14,7 @@ function TripDetails(props) {
 
     useEffect(() => {
         async function getData() {
-          const request = fetch(`http://localhost:8000/trips/${props.match.params.id}?format=json`);
+          const request = fetch(`${process.env.REACT_APP_API_URL}/trips/${props.match.params.id}?format=json`);
           const response = await request;
           const parsed = await response.json();
           setData(parsed);

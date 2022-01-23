@@ -18,13 +18,13 @@ function EditTrip({entry, data, closeTripModal}) {
         console.log(formState);
         axios({
           method: "patch",
-          url: `http://localhost:8000/trips/${data.id}`,
+          url: `${process.env.REACT_APP_API_URL}/trips/${data.id}`,
           data: formState,
         });
       };
 
       function onDelete(){
-          axios.delete(`http://localhost:8000/trips/${data.id}`)
+          axios.delete(`${process.env.REACT_APP_API_URL}/trips/${data.id}`)
       }
       
       console.log(data.id)

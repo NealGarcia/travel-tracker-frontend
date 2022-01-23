@@ -21,7 +21,7 @@ function CreateEntry({ closeModal, entry, data }) {
     console.log(formState);
     axios({
       method: "post",
-      url: `http://localhost:8000/entries/`,
+      url: `${process.env.REACT_APP_API_URL}/entries/`,
       data: formState,
     });
   };

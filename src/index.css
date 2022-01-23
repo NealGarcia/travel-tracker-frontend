@@ -8,6 +8,7 @@ body {
   background-image: url('./assets/bg_image.jpeg');
   background-attachment: fixed;
   background-size: cover;
+  background-color: #111111;
 }
 
 a:-webkit-any-link {
@@ -171,6 +172,27 @@ a:hover{
   color: #8c8c8c;
 }
 
+.entryImg{
+  display: block;
+  min-width: 100px;
+  max-width: 1000px;
+  height: auto;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .footer{
   width: 50%;
   margin: auto;
@@ -178,5 +200,12 @@ a:hover{
   margin-bottom:20px;
   text-align: center;
   color: #8c8c8c;
+}
+
+.footer span{
+  text-decoration: underline;
+}
+.footer span:hover{
+  color:white;
 }
 

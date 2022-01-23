@@ -19,7 +19,7 @@ function EditEntry({ closeModal, entry, counter }) {
     console.log(formState);
     axios({
       method: "patch",
-      url: `http://localhost:8000/entries/${entry[counter].id}`,
+      url: `${process.env.REACT_APP_API_URL}/entries/${entry[counter].id}`,
       data: formState,
     });
   };

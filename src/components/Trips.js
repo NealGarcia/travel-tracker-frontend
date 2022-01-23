@@ -23,7 +23,7 @@ function Trips(props) {
 
   // API Fetch
   useEffect(() => {
-    const url = `http://localhost:8000/trips/?format=json`;
+    const url = `${process.env.REACT_APP_API_URL}/trips/?format=json`;
     fetch(url)
       .then((res) => res.json())
       .then((json) => {
@@ -47,7 +47,7 @@ function Trips(props) {
   return (
     <div className="trips">
       <h2 className="splash">
-        Document and relive your journeys and experiences.
+        Document and relive your journeys and travel experiences.
       </h2>
 
       <div className="tripContainer">
@@ -69,7 +69,7 @@ function Trips(props) {
             <BsPlusCircle></BsPlusCircle>
           </div>
         </div>
-        
+
       </div>
     </div>
   );

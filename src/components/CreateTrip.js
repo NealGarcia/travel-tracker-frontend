@@ -19,7 +19,7 @@ function CreateTrip({ closeModal }) {
     console.log(formState);
     axios({
       method: "post",
-      url: `http://localhost:8000/trips/`,
+      url: `${process.env.REACT_APP_API_URL}/trips/`,
       data: formState,
     });
   };

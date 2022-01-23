@@ -96,7 +96,7 @@ function Entry({ entry, data }) {
 
   // Delete Request
   function onDelete() {
-    axios.delete(`http://localhost:8000/entries/${entryId}`);
+    axios.delete(`${process.env.REACT_APP_API_URL}/entries/${entryId}`);
     window.location.reload();
   }
 
