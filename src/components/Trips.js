@@ -3,6 +3,7 @@ import TripCard from "./TripCard";
 import Modal from "react-modal";
 import CreateTrip from "./CreateTrip";
 import { BsPlusCircle } from "react-icons/bs";
+import { BiNoEntry } from "react-icons/bi";
 
 // modal styles
 const customStyles = {
@@ -13,7 +14,15 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    borderRadius: "10px",
+    border: "0.5px solid white",
+    backgroundColor: 'rgb(200, 200, 200)',
   },
+  overlay:{
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    
+    
+  }
 };
 
 function Trips(props) {

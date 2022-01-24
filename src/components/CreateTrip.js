@@ -27,26 +27,48 @@ function CreateTrip({ closeModal }) {
   return (
     <div>
       <form className="createTripForm">
-        <h3>New Trip</h3>
-        <label>
-          Location
-          <input
-            type="text"
-            name="location"
-            placeholder="Location"
-            onChange={handleChange}
-          ></input>
-        </label>
-        <label>
-          Start Date
-          <input type="date" name="start_date" onChange={handleChange}></input>
-        </label>
-        <label>
-          End Date
-          <input type="date" name="end_date" onChange={handleChange}></input>
-        </label>
-        <button onClick={handleSubmit}>Submit</button>
-        <button onClick={closeModal}>Cancel</button>
+        <h3 className="modalTitle">New Trip</h3>
+        <ul className="formWrapper">
+          <li className="formRow">
+            <label>
+              Location
+              <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                onChange={handleChange}
+              ></input>
+            </label>
+          </li>
+          <li className="formRow">
+            <label>
+              Start Date
+              <input
+                type="date"
+                name="start_date"
+                onChange={handleChange}
+                id = "dateField"
+              ></input>
+            </label>
+          </li>
+          <li className="formRow">
+            <label>
+              End Date
+              <input
+                type="date"
+                name="end_date"
+                onChange={handleChange}
+                id = "dateField"
+              ></input>
+            </label>
+          </li>
+          <li className="formRow">
+            <button onClick={handleSubmit} id = "submit">Submit</button>
+          </li>
+          <li className="formRow">
+            <button onClick={closeModal} id = "cancel">Cancel</button>
+          </li>
+        </ul>
       </form>
     </div>
   );

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Oxygen:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Oxygen:wght@300;400;700&display=swap");
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   font-weight: 300;
   margin: 0px;
   color: white;
-  background-image: url('./assets/bg_image.jpeg');
+  background-image: url("./assets/bg_image.jpeg");
   background-attachment: fixed;
   background-size: cover;
   background-color: #111111;
@@ -16,11 +16,11 @@ a:-webkit-any-link {
   color: inherit;
 }
 
-a{
+a {
   transition: 0.2s ease-in-out;
 }
 
-#tripCardWhole:hover{
+#tripCardWhole:hover {
   margin-top: -5px;
 }
 
@@ -32,17 +32,17 @@ a{
   height: 80px;
   padding: 5px;
   position: fixed;
-  background-image: url('./assets/bg_image.jpeg');
+  background-image: url("./assets/bg_image.jpeg");
   background-attachment: fixed;
   background-size: cover;
-  z-index: 1;
+  z-index: 0;
 }
 
-.header h1{
+.header h1 {
   padding-left: 40px;
   margin-top: 20px;
   margin-left: 40px;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 35px;
   font-weight: 400;
   color: inherit;
@@ -50,18 +50,18 @@ a{
   transition: 0.15s ease-in-out;
 }
 
-.header h1:hover{
+.header h1:hover {
   opacity: 0.5;
 }
 
-.splash{
+.splash {
   margin-top: 50px;
   margin-bottom: 50px;
   font-weight: 500;
   text-align: center;
 }
 
-.tripHeader{
+.tripHeader {
   text-align: center;
   margin-top: 40px;
 }
@@ -70,20 +70,21 @@ a{
   padding-top: 100px;
 }
 
-.tripContainer{
+.tripContainer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
   margin-bottom: 120px;
   display: flex;
-  flex-direction: row;
+  flex-direction: Row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px 30px;
+  z-index: -2;
 }
 
-.tripCard{
+.tripCard {
   background-color: rgba(0, 0, 0, 0.5);
   height: 300px;
   width: 400px;
@@ -93,43 +94,45 @@ a{
   overflow: hidden;
   flex: 0 1 calc(25% - 1em);
   border-radius: 10px;
+  z-index: -3;
   /* box-shadow: 0 2px 5px 3px rgba(0,0,0,0.2); */
 }
 
-.cardImg{
+.cardImg {
   height: 300px;
   width: 400px;
   object-fit: cover;
   margin-top: 0px;
 }
 
-#entryCount{
+#entryCount {
   padding-top: 110px;
   font-size: 14px;
 }
 
-#newTrip{
+#newTrip {
   height: 300px;
-  min-width:400px;
+  min-width: 400px;
   max-width: 400px;
   margin-top: 70px;
   cursor: pointer;
   background: none;
-  border: 1px solid #FFFFFF;
-  transition: 0.15s ease-in-out
+  border: 1px solid #ffffff;
+  transition: 0.15s ease-in-out;
+  z-index: 0;
 }
 
-#newTrip:hover{
-  background-color: rgba(255,255,255, 0.2);
-  border: 1px solid rgba(255,255,255, 0.2);
+#newTrip:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#newTrip p{
-  margin-top:0px;
+#newTrip p {
+  margin-top: 0px;
   padding-top: 40px;
 }
 
-.createWrapper{
+.createWrapper {
   margin-top: 65px;
 }
 
@@ -150,54 +153,54 @@ a{
   text-align: center;
 }
 
-.detailsDate{
+.detailsDate {
   text-align: center;
 }
 
-.backButton{
+.backButton {
   top: 50px;
   left: 20px;
   font-size: 20px;
   position: relative;
 }
 
-.backButton:hover{
+.backButton:hover {
   color: #aaaaaa;
 }
 
-.tripDetails{
+.tripDetails {
   margin-top: 150px;
 }
 
-.tripName{
-  margin-bottom: -10px
+.tripName {
+  margin-bottom: -10px;
 }
 
-.tripDates{
+.tripDates {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: -10px;
   color: #8c8c8c;
 }
 
-.backButton{
+.backButton {
   position: absolute;
   margin-top: 40px;
 }
 
-.detailsTitle{
-  font-family: 'Merriweather', serif;
+.detailsTitle {
+  font-family: "Merriweather", serif;
   font-size: 35px;
   font-weight: 400;
 }
 
-.detailsDate{
+.detailsDate {
   margin-top: -20px;
   color: #aaaaaa;
   font-size: 14px;
 }
 
-.entryImg{
+.entryImg {
   display: block;
   min-width: 100px;
   max-width: 1000px;
@@ -205,32 +208,101 @@ a{
   margin: auto;
 }
 
+.createTripForm{
+}
 
+.modalTitle {
+  font-family: "Merriweather", serif;
+  color: #444444;
+}
 
+.formWrapper {
+  list-style-type: none;
+}
+.formRow {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
 
+.formRow button {
+  display: flex;
+  border: 1px solid #444444;
+  background-color: rgb(200,200,200);
+  border-radius: 5px;
+  color: #444444;
+  padding: 0.5em;
+  padding-left: 40px;
+  padding-right: 40px;
+  transition: 0.1s ease-in-out;
+  margin-right: 85px;
+}
 
+.formRow label {
+  align-content: flex-start;
+  margin-left: -10px;
+  color: #444444
+  
+}
 
+.formRow input {
+  flex: 2;
+  padding-left: 5px;
+  background-color: rgb(235, 235, 235);
+  border: none;
+  border-radius: 2px;
+  font-family: "Oxygen", sans-serif;
+  padding: 0.5em;
+  margin-left: 20px
+}
 
+#submit { 
+  color: #444444;
+  border: none;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(235, 235, 235);
+}
 
+#submit:hover {
+  background-color: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  color: white
+}
 
+#cancel:hover {
+  background-color: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  color: white;
+}
 
+.formRow label {
+  margin-right: 20px;
+}
 
+.iconButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
-
-
-.footer{
+.footer {
   width: 100%;
   margin: auto;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   text-align: center;
   color: #aaaaaa;
   position: relative;
   bottom: 0px;
 }
 
-.footer span{
+
+.footer span {
   text-decoration: underline;
 }
-.footer span:hover{
-  color:white;
+.footer span:hover {
+  color: white;
 }
