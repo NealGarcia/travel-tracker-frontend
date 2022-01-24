@@ -31,8 +31,7 @@ function TripDetails(props) {
     var new_end_date = ( [ initial_end_date[1], initial_end_date[0], initial_end_date[2] ].join('/'))
     
     return (
-        <div>
-            <h2 className = "test">TEST</h2>
+        <div className = "tripDetails">
             <Link to = "/" className = "backButton"><p>Go Back</p></Link>
             <h1 className = "detailsTitle"> {data.location}</h1>
             <p className = "detailsDate">{new_start_date} - {new_end_date}</p>

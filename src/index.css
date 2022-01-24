@@ -20,7 +20,7 @@ a{
   transition: 0.2s ease-in-out;
 }
 
-a:hover{
+#tripCardWhole:hover{
   margin-top: -5px;
 }
 
@@ -161,6 +161,14 @@ a:hover{
   position: relative;
 }
 
+.backButton:hover{
+  color: #aaaaaa;
+}
+
+.tripDetails{
+  margin-top: 150px;
+}
+
 .tripName{
   margin-bottom: -10px
 }
@@ -170,6 +178,23 @@ a:hover{
   font-size: 14px;
   margin-bottom: -10px;
   color: #8c8c8c;
+}
+
+.backButton{
+  position: absolute;
+  margin-top: 40px;
+}
+
+.detailsTitle{
+  font-family: 'Merriweather', serif;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.detailsDate{
+  margin-top: -20px;
+  color: #aaaaaa;
+  font-size: 14px;
 }
 
 .entryImg{
@@ -194,12 +219,13 @@ a:hover{
 
 
 .footer{
-  width: 50%;
+  width: 100%;
   margin: auto;
-  margin-top:60px;
   margin-bottom:20px;
   text-align: center;
-  color: #8c8c8c;
+  color: #aaaaaa;
+  position: relative;
+  bottom: 0px;
 }
 
 .footer span{
@@ -208,4 +234,3 @@ a:hover{
 .footer span:hover{
   color:white;
 }
-

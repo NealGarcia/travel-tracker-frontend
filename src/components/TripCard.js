@@ -18,7 +18,7 @@ function TripCard({ trip, trips }) {
 
   console.log(trip.entry.length);
   return (
-    <Link to={`/trip/${trip.id}`}>
+    <Link to={`/trip/${trip.id}`} id = "tripCardWhole">
       <h3 className="tripName">{trip.location}</h3>
       <p className="tripDates">
         {new_start_date} - {new_end_date}
