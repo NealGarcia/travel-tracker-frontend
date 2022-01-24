@@ -9,6 +9,8 @@ function EditEntry({ closeModal, entry, counter }) {
     trip_id: entry[0].trip_id,
   });
 
+  console.log(counter)
+
   // Event handlers to capture data from form
   const handleChange = (ev) => {
     setFormState({ ...formState, [ev.target.name]: ev.target.value });
@@ -23,8 +25,6 @@ function EditEntry({ closeModal, entry, counter }) {
       data: formState,
     });
   };
-
-  var value = entry[counter].photo_url
 
   return (
     <div>
