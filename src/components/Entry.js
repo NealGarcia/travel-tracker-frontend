@@ -7,6 +7,7 @@ import CreateEntry from "./CreateEntry";
 import axios from "axios";
 import EditEntry from "./EditEntry";
 import EditTrip from "./EditTrip";
+import { IconContext } from "react-icons";
 
 // modal styles
 const customStyles = {
@@ -116,81 +117,91 @@ function Entry({ entry, data }) {
 
   console.log(entry);
 
+  var initial_date = (entry[counter].date.split("-"))
+  var new_date = ( [ initial_date[1], initial_date[2], initial_date[0] ].join('/'))
+
   return (
     <div className="entry">
+       <IconContext.Provider
+      value={{ color: 'white', size: '20px' }}
+      >
       <div className="container">
         <img
           src={entry[counter].photo_url}
           alt={entry[counter].id}
           className="entryImg"
         />
-        <h2>{entry[counter].date}</h2>
-        <h3>{entry[counter].body}</h3>
+        <div className="entryDetails">
+          <h3 id = "date">{new_date}</h3>
+          <h2>{entry[counter].body}</h2>
 
-        <p>
-          {counter + 1}/{entry.length}
-        </p>
-
-        <div className="arrowButtons">
-          {/* Click Image Left */}
-          <button
-            type="button"
-            id="buttonLeft"
-            // If counter is at index 0, click to the end of the array
-            onClick={() =>
-              counter === 0
-                ? setCounter(entry.length - 1)
-                : setCounter(counter - 1)
-            }
-          >
-            <BsFillArrowLeftCircleFill />
-          </button>
-          {/* Click Image Right */}
-          <button
-            type="button"
-            id="buttonRight"
-            // if counter is at the end of array, reset to index 0
-            onClick={() =>
-              counter === entry.length - 1
-                ? setCounter(0)
-                : setCounter(counter + 1)
-            }
-          >
-            <BsFillArrowRightCircleFill />
-          </button>
+          <p>
+            {counter + 1}/{entry.length}
+          </p>
         </div>
-        <button className="newEntry" onClick={openCreateModal}>
-          New Entry
-        </button>
+
+          <div className="arrowButtons">
+            {/* Click Image Left */}
+            <button
+              type="button"
+              id="buttonLeft"
+              // If counter is at index 0, click to the end of the array
+              onClick={() =>
+                counter === 0
+                  ? setCounter(entry.length - 1)
+                  : setCounter(counter - 1)
+              }
+            >
+              <BsFillArrowLeftCircleFill />
+            </button>
+            {/* Click Image Right */}
+            <button
+              type="button"
+              id="buttonRight"
+              // if counter is at the end of array, reset to index 0
+              onClick={() =>
+                counter === entry.length - 1
+                  ? setCounter(0)
+                  : setCounter(counter + 1)
+              }
+            >
+              <BsFillArrowRightCircleFill />
+            </button>
+          </div>
+          <button className="newEntry" onClick={openCreateModal}>
+            New Entry
+          </button>
+          <Modal
+            isOpen={createModal}
+            onRequestClose={closeCreateModal}
+            style={customStyles}
+            contentLabel="Create New Entry"
+          >
+            <CreateEntry
+              closeCreateModal={closeCreateModal}
+              entry={entry}
+              data={data}
+            />
+          </Modal>
+
+          <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
+
+          <div>
+            {showEdit ? (
+              <div className="editButtons">
+                <button id="editEntry" onClick={openEditModal}>
+                  Edit Entry
+                </button>
+                <button id="editTrip" onClick={openTripModal}>
+                  Edit Trip
+                </button>
+                <button id="deleteButton" onClick={onDelete}>
+                  Delete
+                </button>
+              </div>
+            ) : null}
+          </div>
         <Modal
-          isOpen={createModal}
-          onRequestClose={closeCreateModal}
-          style={customStyles}
-          contentLabel="Create New Entry"
-        >
-          <CreateEntry
-            closeCreateModal={closeCreateModal}
-            entry={entry}
-            data={data}
-          />
-        </Modal>
-
-        <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
-
-        <div>
-          {showEdit ? (
-            <div className="editButtons">
-              <button id="editEntry" onClick={openEditModal}>
-                Edit Entry
-              </button>
-              <button id="editTrip" onClick={openTripModal}>
-                Edit Trip
-              </button>
-              <button id="deleteButton" onClick={onDelete}>
-                Delete
-              </button>
-
-              <Modal
                 isOpen={editTripModal}
                 onRequestClose={closeTripModal}
                 style={customStyles}
@@ -215,10 +226,8 @@ function Entry({ entry, data }) {
                   counter={counter}
                 />
               </Modal>
-            </div>
-          ) : null}
-        </div>
       </div>
+      </IconContext.Provider>
     </div>
   );
 }
