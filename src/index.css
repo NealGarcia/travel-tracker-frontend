@@ -208,11 +208,7 @@ a {
   margin: auto;
 }
 
-.createTripForm{
-}
-
 .modalTitle {
-  font-family: "Merriweather", serif;
   color: #444444;
 }
 
@@ -278,6 +274,43 @@ a {
 .formRow label {
   margin-right: 20px;
 }
+
+#noEntry {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.newEntryButtons {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border-radius: 5px;
+  transition: 0.1s ease-in-out;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.newEntryButtons button{
+  border: 1px solid white;
+  background-color: rgb(0,0,0,0);
+  border-radius: 5px;
+  color: white;
+  padding: 0.5em;
+  padding-left: 40px;
+  padding-right: 40px;
+  transition: 0.1s ease-in-out;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
 
 .iconButton {
   background: none;

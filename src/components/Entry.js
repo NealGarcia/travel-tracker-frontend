@@ -17,6 +17,12 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    borderRadius: "10px",
+    border: "0.5px solid white",
+    backgroundColor: "rgb(200, 200, 200)",
+  },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
 };
 
@@ -36,11 +42,19 @@ function Entry({ entry, data }) {
     if (entry.length === 0) {
       return (
         <>
-          <h3>No Entries Found</h3>
-          <button onClick={openCreateModal}>Add a New entry</button>
-          <button id="editTrip" onClick={openTripModal}>
-            Edit Trip
-          </button>
+          <h3 id="noEntry">No Entries Found</h3>
+          <div className="newEntryButtons">
+            <button onClick={openCreateModal} className="newEntryButton">
+              Add a New entry
+            </button>
+            <button
+              id="editTrip"
+              onClick={openTripModal}
+              className="newEntryButton"
+            >
+              Edit Trip
+            </button>
+          </div>
           <Modal
             isOpen={createModal}
             onRequestClose={closeCreateModal}

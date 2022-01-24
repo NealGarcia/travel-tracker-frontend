@@ -27,7 +27,7 @@ function CreateTrip({ closeModal }) {
   return (
     <div>
       <form className="createTripForm">
-        <h3 className="modalTitle">New Trip</h3>
+        <h3 className="modalTitle">Create New Trip</h3>
         <ul className="formWrapper">
           <li className="formRow">
             <label>
