@@ -162,6 +162,9 @@ a {
   left: 20px;
   font-size: 20px;
   position: relative;
+  margin-left: 90px;
+  padding-top: 20px;
+  z-index: -5;
 }
 
 .backButton:hover {
@@ -252,6 +255,13 @@ a {
   margin-left: 20px
 }
 
+#description {
+  flex: 2;
+  background-color: rgb(235, 235, 235);
+  border: none;
+  font-family: "Oxygen", sans-serif;
+}
+
 #submit { 
   color: #444444;
   border: none;
@@ -302,6 +312,11 @@ a {
   transition: 0.1s ease-in-out;
   margin-right: 10px;
   margin-bottom: 20px;
+}
+
+.newEntryButtons button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 
