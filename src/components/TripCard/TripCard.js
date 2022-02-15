@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './TripCard.css'
 
 function TripCard({ trip, trips }) {
   // Reformat dates from YYYY-DD-MM to DD/MM/YYYY

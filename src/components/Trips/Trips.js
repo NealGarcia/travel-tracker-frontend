@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import TripCard from "./TripCard";
+import TripCard from "../TripCard/TripCard";
 import Modal from "react-modal";
-import CreateTrip from "./CreateTrip";
+import CreateTrip from "../CreateTrip";
 import { BsPlusCircle } from "react-icons/bs";
-import { BiNoEntry } from "react-icons/bi";
+import './Trips.css'
 
 // modal styles
 const customStyles = {

@@ -3,11 +3,12 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Modal from "react-modal";
-import CreateEntry from "./CreateEntry";
+import CreateEntry from "../CreateEntry/CreateEntry";
 import axios from "axios";
-import EditEntry from "./EditEntry";
-import EditTrip from "./EditTrip";
+import EditEntry from "../EditEntry";
+import EditTrip from "../EditTrip";
 import { IconContext } from "react-icons";
+import './Entry.css'
 
 // modal styles
 const customStyles = {

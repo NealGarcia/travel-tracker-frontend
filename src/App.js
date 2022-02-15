@@ -1,7 +1,7 @@
-import Header from "./components/Header";
-import Trips from "./components/Trips";
-import TripDetails from './components/TripDetails'
-import Footer from './components/Footer.js'
+import Header from "./components/Header/Header";
+import Trips from "./components/Trips/Trips";
+import TripDetails from './components/TripDetails/TripDetails'
+import Footer from './components/Footer/Footer.js'
 import { Route } from "react-router-dom";
 
 function App() {

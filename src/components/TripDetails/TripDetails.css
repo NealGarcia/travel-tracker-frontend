@@ -1,0 +1,48 @@
+.detailsTitle {
+  margin-top: 60px;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.detailsDate {
+  text-align: center;
+  margin-top: -20px;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.backButton {
+  top: 50px;
+  left: 20px;
+  font-size: 20px;
+  position: relative;
+  margin-left: 90px;
+  padding-top: 20px;
+  z-index: -5;
+}
+
+.backButton:hover {
+  color: #aaaaaa;
+}
+
+.tripDetails {
+  margin-top: 150px;
+}
+
+.tripName {
+  margin-bottom: -10px;
+}
+
+.tripDates {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: -10px;
+  color: #8c8c8c;
+}
+
+.backButton {
+  position: absolute;
+  margin-top: 40px;
+}

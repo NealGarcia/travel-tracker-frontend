@@ -1,0 +1,52 @@
+.tripCard {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 300px;
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+    flex: 0 1 calc(25% - 1em);
+    border-radius: 10px;
+    z-index: -3;
+    /* box-shadow: 0 2px 5px 3px rgba(0,0,0,0.2); */
+  }
+  
+  .cardImg {
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+    margin-top: 0px;
+  }
+  
+  #tripCardWhole:hover {
+    margin-top: -3px;
+  }
+  
+  #entryCount {
+    padding-top: 110px;
+    font-size: 14px;
+  }
+  
+  #newTrip {
+    height: 300px;
+    min-width: 400px;
+    max-width: 400px;
+    margin-top: 70px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #ffffff;
+    transition: 0.15s ease-in-out;
+    z-index: 0;
+  }
+  
+  #newTrip:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  #newTrip p {
+    margin-top: 0px;
+    padding-top: 40px;
+  }
+  

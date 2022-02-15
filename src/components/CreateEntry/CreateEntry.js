@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './CreateEntry.css'
 
 function CreateEntry({ closeModal, entry, data }) {
   const [formState, setFormState] = useState({
