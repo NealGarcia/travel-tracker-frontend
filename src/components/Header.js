@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 function Header(props) {
     return (
         <div className = 'header'>
-            <Link to="/">
-                <h1>traveltrackr</h1>
-            </Link>
+            <h1><Link to="/">traveltrackr</Link></h1>
+            <div className = "navBar">
+                <a href="#about" className = "nav">About</a>
+                <a href="#search" className = "nav">Sign Out</a>
+            </div>
         </div>
     );
 }

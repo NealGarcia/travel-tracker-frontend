@@ -16,11 +16,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     borderRadius: "10px",
     border: "0.5px solid white",
-    backgroundColor: 'rgb(200, 200, 200)',
+    backgroundColor: "rgb(200, 200, 200)",
   },
-  overlay:{
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  }
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
 };
 
 function Trips(props) {
@@ -48,14 +48,13 @@ function Trips(props) {
     setIsOpen(false);
   }
 
+  // if api fetch still loading, return a element
   if (trips === undefined) return <h3>Loading</h3>;
   console.log(trips);
 
   return (
     <div className="trips">
-      <h2 className="splash">
-        Document and relive your journeys and travel experiences.
-      </h2>
+      <h2 className="splash">YOUR TRIPS</h2>
 
       <div className="tripContainer">
         {trips.map((trip) => (
@@ -76,7 +75,6 @@ function Trips(props) {
             <BsPlusCircle></BsPlusCircle>
           </div>
         </div>
-
       </div>
     </div>
   );

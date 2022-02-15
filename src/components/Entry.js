@@ -117,6 +117,7 @@ function Entry({ entry, data }) {
 
   console.log(entry);
 
+  // format date
   var initial_date = (entry[counter].date.split("-"))
   var new_date = ( [ initial_date[1], initial_date[2], initial_date[0] ].join('/'))
 
