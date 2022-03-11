@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Oxygen:wght@300;400;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 body {
-  font-family: "Oxygen", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin: 0px;
   color: white;
@@ -146,20 +145,6 @@ a {
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-.container{
-  min-width: 100px;
-  max-width: 1000px;
-  height: auto;
-  margin: auto;
-}
-
-.container img{
-  width: 800px;
-  flex-direction: column;
-  justify-content: center;
-}
-
 
 .iconButton {
   background: none;

@@ -8,7 +8,7 @@ import axios from "axios";
 import EditEntry from "../EditEntry";
 import EditTrip from "../EditTrip";
 import { IconContext } from "react-icons";
-import './Entry.css'
+import "./Entry.css";
 
 // modal styles
 const customStyles = {
@@ -119,30 +119,14 @@ function Entry({ entry, data }) {
   console.log(entry);
 
   // format date
-  var initial_date = (entry[counter].date.split("-"))
-  var new_date = ( [ initial_date[1], initial_date[2], initial_date[0] ].join('/'))
+  var initial_date = entry[counter].date.split("-");
+  var new_date = [initial_date[1], initial_date[2], initial_date[0]].join("/");
 
   return (
     <div className="entry">
-       <IconContext.Provider
-      value={{ color: 'white', size: '20px' }}
-      >
-      <div className="container">
-        <img
-          src={entry[counter].photo_url}
-          alt={entry[counter].id}
-          className="entryImg"
-        />
-        <div className="entryDetails">
-          <h3 id = "date">{new_date}</h3>
-          <h2>{entry[counter].body}</h2>
-
-          <p>
-            {counter + 1}/{entry.length}
-          </p>
-        </div>
-
-          <div className="arrowButtons">
+      <IconContext.Provider value={{ color: "white", size: "20px" }}>
+        <div className="entryContainer">
+          <div className="imgContainer">
             {/* Click Image Left */}
             <button
               type="button"
@@ -156,6 +140,13 @@ function Entry({ entry, data }) {
             >
               <BsFillArrowLeftCircleFill />
             </button>
+
+            <img
+              src={entry[counter].photo_url}
+              alt={entry[counter].id}
+              className="entryImg"
+            />
+
             {/* Click Image Right */}
             <button
               type="button"
@@ -170,6 +161,15 @@ function Entry({ entry, data }) {
               <BsFillArrowRightCircleFill />
             </button>
           </div>
+          <div className="entryDetails">
+
+            <h2>{entry[counter].body}</h2>
+
+            <p>
+              {counter + 1}/{entry.length}
+            </p>
+          </div>
+
           <button className="newEntry" onClick={openCreateModal}>
             New Entry
           </button>
@@ -203,32 +203,32 @@ function Entry({ entry, data }) {
               </div>
             ) : null}
           </div>
-        <Modal
-                isOpen={editTripModal}
-                onRequestClose={closeTripModal}
-                style={customStyles}
-                contentLabel="Edit Trip"
-              >
-                <EditTrip
-                  closeCreateModal={closeTripModal}
-                  entry={entry}
-                  data={data}
-                />
-              </Modal>
+          <Modal
+            isOpen={editTripModal}
+            onRequestClose={closeTripModal}
+            style={customStyles}
+            contentLabel="Edit Trip"
+          >
+            <EditTrip
+              closeCreateModal={closeTripModal}
+              entry={entry}
+              data={data}
+            />
+          </Modal>
 
-              <Modal
-                isOpen={editModal}
-                onRequestClose={closeEditModal}
-                style={customStyles}
-                contentLabel="Edit Entry"
-              >
-                <EditEntry
-                  closeCreateModal={closeEditModal}
-                  entry={entry}
-                  counter={counter}
-                />
-              </Modal>
-      </div>
+          <Modal
+            isOpen={editModal}
+            onRequestClose={closeEditModal}
+            style={customStyles}
+            contentLabel="Edit Entry"
+          >
+            <EditEntry
+              closeCreateModal={closeEditModal}
+              entry={entry}
+              counter={counter}
+            />
+          </Modal>
+        </div>
       </IconContext.Provider>
     </div>
   );
