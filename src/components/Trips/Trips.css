@@ -12,17 +12,17 @@
   }
   
   .trips {
-    padding-top: 100px;
+    padding-top: 70px;
   }
   
   .tripContainer {
-    width: 100%;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 120px;
     display: flex;
-    flex-direction: Row;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px 30px;

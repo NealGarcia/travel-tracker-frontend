@@ -9,6 +9,7 @@ function Header(props) {
                 <h1 className = "title"><Link to="/">travly</Link></h1>
                 <div className = "navLinks">
                     <a href="#Trips" className = "nav">View Trips</a>
+                    <a href="#add" className = "nav">Add Trip</a>
                     <a href="#search" className = "nav">About</a>
                 </div>
             </div>

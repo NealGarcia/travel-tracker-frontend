@@ -54,8 +54,6 @@ function Trips(props) {
 
   return (
     <div className="trips">
-      <h2 className="splash">YOUR TRIPS</h2>
-
       <div className="tripContainer">
         {trips.map((trip) => (
           <TripCard trip={trip} trips={trips} />

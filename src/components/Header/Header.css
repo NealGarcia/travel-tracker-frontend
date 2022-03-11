@@ -4,28 +4,27 @@
   top: 0px;
   width: 100%;
   background-color: #222;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 1px 15px 1px #0000008a;
 }
 
 .title{
-  color: #ffbb00;
-  margin-top: 7px;
-  margin-left: 90px;
-  transition: 0.1s ease-in-out;
+  margin-top: 11px;
+  margin-left: 120px;
+  transition: 0s;
   font-family: 'Chango', cursive;
 }
 
 .navLinks{
-  margin-top: 18px;
-  margin-right: 80px;
+  margin-top: 24px;
+  margin-right: 120px;
 }
 
 .nav{
   margin-right: 40px;
-  transition: 0.1s ease-in-out;
+  transition: 0.0s;
   font-weight: 600;
   font-size: 0.9em;
 }
