@@ -4,10 +4,7 @@ body {
   font-weight: 300;
   margin: 0px;
   color: white;
-  /* background-image: url("./assets/bg_image.jpeg"); */
-  /* background-attachment: fixed;
-  background-size: cover; */
-  background-color: #222222;
+  background-color: #111;
 }
 
 a:-webkit-any-link {
