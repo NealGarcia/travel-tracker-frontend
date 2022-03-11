@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Entry from '../Entry/Entry';
 import './TripDetails.css'
+import  { BiArrowBack } from 'react-icons/bi'
 
 function TripDetails(props) {
     const [data, setData] = useState({
@@ -22,18 +23,10 @@ function TripDetails(props) {
         }
         getData();
       }, []);
-
-    // console.log(data)
-
-    // Reformat dates from YYYY-DD-MM to DD/MM/YYYY
-    var initial_start_date = (data.start_date.split("-").reverse())
-    var initial_end_date = (data.end_date.split("-").reverse())
-    var new_start_date = ( [ initial_start_date[1], initial_start_date[0], initial_start_date[2] ].join('/'))
-    var new_end_date = ( [ initial_end_date[1], initial_end_date[0], initial_end_date[2] ].join('/'))
     
     return (
         <div className = "tripDetails">
-            <Link to = "/" className = "backButton"><p>Go Back</p></Link>
+            <Link to = "/" className = "backButton"><BiArrowBack /></Link>
             <h1 className = "detailsTitle"> {data.location}</h1>
             <p className = "detailsDate">{data.entry.date}</p>
             <Entry 
