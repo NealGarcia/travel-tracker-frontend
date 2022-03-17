@@ -44,6 +44,7 @@ function Entry({ entry, data }) {
     if (entry.length === 0) {
       return (
         <>
+          <h1 className = "detailsTitle"> {data.location}</h1>
           <h3 id="noEntry">No Entries Found</h3>
           <div className="newEntryButtons">
             <button onClick={openCreateModal} className="newEntryButton">
@@ -162,35 +163,22 @@ function Entry({ entry, data }) {
             </button>
           </div>
           <div className="entryDetails">
-
+            {/* Trip Name */}
+            <h1 className = "detailsTitle"> {data.location}</h1>
+            {/* Entry Body */}
             <h2>{entry[counter].body}</h2>
-
+            {/* Display Counter */}
             <p>
               {counter + 1}/{entry.length}
             </p>
           </div>
-
-          <button className="newEntry" onClick={openCreateModal}>
-            New Entry
-          </button>
-          <Modal
-            isOpen={createModal}
-            onRequestClose={closeCreateModal}
-            style={customStyles}
-            contentLabel="Create New Entry"
-          >
-            <CreateEntry
-              closeCreateModal={closeCreateModal}
-              entry={entry}
-              data={data}
-            />
-          </Modal>
-
-          <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} />
-
-          <div>
+          <div className = "menu">
+          <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)}  id = "kebabMenu"/>
             {showEdit ? (
               <div className="editButtons">
+                <button className="newEntry" onClick={openCreateModal}>
+                  New Entry
+                </button>
                 <button id="editEntry" onClick={openEditModal}>
                   Edit Entry
                 </button>
@@ -226,6 +214,19 @@ function Entry({ entry, data }) {
               closeCreateModal={closeEditModal}
               entry={entry}
               counter={counter}
+            />
+          </Modal>
+
+          <Modal
+            isOpen={createModal}
+            onRequestClose={closeCreateModal}
+            style={customStyles}
+            contentLabel="Create New Entry"
+          >
+            <CreateEntry
+              closeCreateModal={closeCreateModal}
+              entry={entry}
+              data={data}
             />
           </Modal>
         </div>

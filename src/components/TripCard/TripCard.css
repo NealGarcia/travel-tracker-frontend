@@ -7,9 +7,8 @@
     text-align: center;
     overflow: hidden;
     flex: 0 1 calc(25% - 1em);
-    border-radius: 10px;
+    border-radius: 5px;
     z-index: -3;
-    /* box-shadow: 0 2px 5px 3px rgba(0,0,0,0.2); */
   }
   
   .cardImg {
@@ -49,4 +48,8 @@
     margin-top: 0px;
     padding-top: 40px;
   }
-  
+
+  .menu{
+    display: flex;
+    justify-content: center;
+  }

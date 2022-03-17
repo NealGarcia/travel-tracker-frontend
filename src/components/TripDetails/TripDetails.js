@@ -26,8 +26,7 @@ function TripDetails(props) {
     
     return (
         <div className = "tripDetails">
-            <Link to = "/" className = "backButton"><BiArrowBack /></Link>
-            <h1 className = "detailsTitle"> {data.location}</h1>
+            <Link to = "/" className = "backButton"><BiArrowBack /> Go Back</Link>
             <p className = "detailsDate">{data.entry.date}</p>
             <Entry 
                 entry = {entry}

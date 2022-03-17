@@ -1,5 +1,6 @@
 .entryImg {
-  max-width: 35%;
+  max-width: 70%;
+  margin-top: 50px;
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -35,3 +36,22 @@
   color: #aaaaaa;
   font-size: 16px;
 }
+
+.entryDetails{
+  text-align: center;
+}
+
+.entry{
+  margin: auto;
+  background-color: blue;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+}
+
