@@ -173,7 +173,7 @@ function Entry({ entry, data }) {
             </p>
           </div>
           <div className = "menu">
-          <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)}  id = "kebabMenu"/>
+          <BiDotsHorizontalRounded onClick={() => setShowEdit(!showEdit)} id = "menuIcon"/>
             {showEdit ? (
               <div className="editButtons">
                 <button className="newEntry" onClick={openCreateModal}>

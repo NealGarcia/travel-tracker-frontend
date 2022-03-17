@@ -12,23 +12,26 @@
 
 #buttonLeft,
 #buttonRight {
+  margin: auto;
   background: none;
   color: inherit;
   border: none;
-  padding: 0;
+  padding: 5px;
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  margin-right: 10px;
-  transition: 0.12s ease-in-out;
+  width:40px;
+  height:40px;
 }
 
 #buttonRight:hover{
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
 #buttonLeft:hover{
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
 
@@ -43,6 +46,7 @@
 
 .entry{
   margin: auto;
+  margin-bottom: 40px;
   background-color: blue;
   width: 50%;
   border-radius: 5px;
@@ -52,6 +56,36 @@
 
 .menu{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
+#menuIcon {
+  margin-bottom: 15px;
+}
+
+#menuIcon:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+#newTrip p {
+  margin-top: 0px;
+  padding-top: 40px;
+}
+
+.editButtons{
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editButtons button{
+  all: unset;
+  cursor:pointer;
+}
