@@ -4,7 +4,6 @@ import "./Header.css";
 import Modal from "react-modal";
 import CreateTrip from "../CreateTrip";
 
-
 // modal styles
 const customStyles = {
   content: {
@@ -43,7 +42,7 @@ function Header(props) {
         </h1>
         <div className="navLinks">
           <a href="#Trips" className="nav">
-            View Trips
+            <Link to="/">View Trips</Link>
           </a>
           <a href="#add" className="nav" onClick={openModal}>
             Add Trip
