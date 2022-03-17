@@ -6,7 +6,7 @@ function Header(props) {
     return (
         <div className = 'header'>
             <div className = "navBar">
-                <h1 className = "title"><Link to="/">travly</Link></h1>
+                <h1 className = "title"><Link to="/">travlr</Link></h1>
                 <div className = "navLinks">
                     <a href="#Trips" className = "nav">View Trips</a>
                     <a href="#add" className = "nav">Add Trip</a>
