@@ -45,7 +45,7 @@ function Header(props) {
             <Link to="/">View Trips</Link>
           </a>
           <a href="#add" className="nav" onClick={openModal}>
-            Add Trip
+            Create New Trip
           </a>
           <Modal
             isOpen={modalIsOpen}
